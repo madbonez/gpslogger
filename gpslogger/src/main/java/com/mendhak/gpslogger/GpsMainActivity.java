@@ -500,6 +500,7 @@ public class GpsMainActivity extends AppCompatActivity
         materialDrawer.addItem(GpsLoggerDrawerItem.newSecondary(R.string.autoemail_title, R.drawable.email, 1006));
         materialDrawer.addItem(GpsLoggerDrawerItem.newSecondary(R.string.owncloud_setup_title, R.drawable.owncloud, 1010));
         materialDrawer.addItem(GpsLoggerDrawerItem.newSecondary(R.string.autoftp_setup_title, R.drawable.ftp, 1007));
+        materialDrawer.addItem(GpsLoggerDrawerItem.newSecondary(R.string.sms_manager, R.drawable.sms, 10077));
 
         materialDrawer.addItem(new DividerDrawerItem());
 
@@ -544,6 +545,9 @@ public class GpsMainActivity extends AppCompatActivity
                         break;
                     case 1010:
                         launchPreferenceScreen(MainPreferenceActivity.PREFERENCE_FRAGMENTS.OWNCLOUD);
+                        break;
+                    case 10077:
+                        launchPreferenceScreen(MainPreferenceActivity.PREFERENCE_FRAGMENTS.SMS);
                         break;
                     case 1015:
                         launchPreferenceScreen(MainPreferenceActivity.PREFERENCE_FRAGMENTS.SFTP);

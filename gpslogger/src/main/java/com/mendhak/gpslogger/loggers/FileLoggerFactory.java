@@ -30,6 +30,7 @@ import com.mendhak.gpslogger.loggers.customurl.CustomUrlLogger;
 import com.mendhak.gpslogger.loggers.gpx.Gpx10FileLogger;
 import com.mendhak.gpslogger.loggers.kml.Kml22FileLogger;
 import com.mendhak.gpslogger.loggers.opengts.OpenGTSLogger;
+import com.mendhak.gpslogger.loggers.sms.SmsLogger;
 import com.mendhak.gpslogger.loggers.wear.AndroidWearLogger;
 
 import java.io.File;
@@ -52,6 +53,15 @@ public class FileLoggerFactory {
         File gpxFolder = new File(preferenceHelper.getGpsLoggerFolder());
         if (!gpxFolder.exists()) {
             gpxFolder.mkdirs();
+        }
+
+        if (preferenceHelper.shouldLogToSms()) {
+            List<String> smsNums = new ArrayList<>();
+            if(!preferenceHelper.getSmsNum1().equals("")) smsNums.add(preferenceHelper.getSmsNum1());
+            if(!preferenceHelper.getSmsNum2().equals("")) smsNums.add(preferenceHelper.getSmsNum2());
+            if(!preferenceHelper.getSmsNum3().equals("")) smsNums.add(preferenceHelper.getSmsNum3());
+
+            loggers.add(new SmsLogger(smsNums));
         }
 
         if (preferenceHelper.shouldLogToGpx()) {

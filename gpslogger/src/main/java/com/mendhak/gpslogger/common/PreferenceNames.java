@@ -121,5 +121,10 @@ public  class PreferenceNames {
     public static final String SFTP_KNOWN_HOST_KEY ="sftp_known_host_key";
     public static final String SFTP_REMOTE_SERVER_PATH ="sftp_remote_server_path";
 
+    public static final String SMS_ENABLED ="sms_enabled";
+    public static final String SMS_NUM1 ="sms_num1";
+    public static final String SMS_NUM2 ="sms_num2";
+    public static final String SMS_NUM3 ="sms_num3";
+
 
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:key="sms_preferences">
+
+    <com.mendhak.gpslogger.ui.components.CustomSwitchPreference
+        android:key="sms_enabled"
+        android:title="On/Off"/>
+
+    <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference
+        android:key="sms_num1"
+        android:title="sms_num1"
+        android:dialogTitle="sms_num1"
+        android:inputType="text"
+        />
+
+    <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference
+        android:key="sms_num2"
+        android:title="sms_num2"
+        android:dialogTitle="sms_num2"
+        android:inputType="text"
+        />
+
+    <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference
+        android:key="sms_num3"
+        android:title="sms_num3"
+        android:dialogTitle="sms_num3"
+        android:inputType="text"
+        />
+
+
+</PreferenceScreen>

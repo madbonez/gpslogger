@@ -85,8 +85,33 @@ public class PreferenceHelper {
         prefs.edit().putString(PreferenceNames.DROPBOX_ACCESS_SECRET, secret).apply();
     }
 
+    public void setSmsFeatureEnabled(Boolean isEnabled){
+        prefs.edit().putBoolean(PreferenceNames.SMS_ENABLED, isEnabled).apply();
+    }
 
+    public void setSmsNum1(String number){
+        prefs.edit().putString(PreferenceNames.SMS_NUM1, number).apply();
+    }
 
+    public void setSmsNum2(String number){
+        prefs.edit().putString(PreferenceNames.SMS_NUM2, number).apply();
+    }
+
+    public void setSmsNum3(String number){
+        prefs.edit().putString(PreferenceNames.SMS_NUM3, number).apply();
+    }
+
+    public String getSmsNum1(){
+       return  prefs.getString(PreferenceNames.SMS_NUM1, "");
+    }
+
+    public String getSmsNum2(){
+        return  prefs.getString(PreferenceNames.SMS_NUM2, "");
+    }
+
+    public String getSmsNum3(){
+        return  prefs.getString(PreferenceNames.SMS_NUM3, "");
+    }
 
     /**
      * Whether automatic sending to email is enabled
@@ -507,6 +532,9 @@ public class PreferenceHelper {
         prefs.edit().putString(PreferenceNames.LATLONG_DISPLAY_FORMAT, displayFormat.toString()).apply();
     }
 
+    public boolean shouldLogToSms() {
+        return prefs.getBoolean(PreferenceNames.SMS_ENABLED, true);
+    }
 
     /**
      * Whether to log to KML file
